@@ -1,3 +1,4 @@
+import { ClerkProvider } from "@clerk/nextjs";
 import "./globals.css";
 import {Inter, Plus_Jakarta_Sans} from 'next/font/google'
 
@@ -22,6 +23,7 @@ const plusJakarta = Plus_Jakarta_Sans({
 
 export default function RootLayout({ children }) {
   return (
+    <ClerkProvider>
     <html lang="en" className={`${inter.variable} ${plusJakarta.variable}`}>
       <body
         className="font-sans"
@@ -29,5 +31,6 @@ export default function RootLayout({ children }) {
         {children}
       </body>
     </html>
+    </ClerkProvider>
   );
 }
