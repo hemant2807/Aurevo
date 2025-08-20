@@ -1,1 +1,19 @@
-node_modules
+# dependencies
+/node_modules
+
+# next.js build output
+/.next
+/out
+
+# env files
+.env*
+!.env.example
+
+# lock files (optional if you want them tracked)
+# package-lock.json
+# yarn.lock
+# pnpm-lock.yaml
+
+# misc
+.DS_Store
+*.log
