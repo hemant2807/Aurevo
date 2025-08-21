@@ -1,6 +1,7 @@
 import { ClerkProvider } from "@clerk/nextjs";
 import "./globals.css";
-import {Inter, Plus_Jakarta_Sans} from 'next/font/google'
+import { Inter, Plus_Jakarta_Sans } from "next/font/google";
+import Provider from "./provider";
 
 export const metadata = {
   title: "Create Next App",
@@ -23,14 +24,12 @@ const plusJakarta = Plus_Jakarta_Sans({
 
 export default function RootLayout({ children }) {
   return (
-    <ClerkProvider>
     <html lang="en" className={`${inter.variable} ${plusJakarta.variable}`}>
-      <body
-        className="font-sans"
-      >
-        {children}
+      <body className="font-sans">
+        <ClerkProvider>
+          <Provider>{children}</Provider>
+        </ClerkProvider>
       </body>
     </html>
-    </ClerkProvider>
   );
 }
