@@ -2,6 +2,7 @@ import { ClerkProvider } from "@clerk/nextjs";
 import "./globals.css";
 import { Inter, Plus_Jakarta_Sans } from "next/font/google";
 import Provider from "./provider";
+import type { ReactNode } from "react";
 
 export const metadata = {
   title: "Create Next App",
@@ -22,7 +23,7 @@ const plusJakarta = Plus_Jakarta_Sans({
   weight: ["600", "700", "800"],
 });
 
-export default function RootLayout({ children }) {
+export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en" className={`${inter.variable} ${plusJakarta.variable}`}>
       <body className="font-sans">
